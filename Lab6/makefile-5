@@ -1,0 +1,13 @@
+all: lab6
+
+lab6: textfunctions.o lab6.o
+	gcc textfunctions.o lab6.o -o lab6
+
+lab6.o: lab6.c textfunctions.h
+	gcc -c lab6.c
+
+textfunctions.o: textfunctions.c textfunctions.h
+	gcc -c textfunctions.c
+	
+clean: 
+	rm -rf *.o;
